@@ -1,0 +1,25 @@
+services:
+    phatic.filesystem:
+        class: Symfony\Component\Filesystem\Filesystem
+    phatic.finder:
+        class: Symfony\Component\Finder\Finder
+    phatic.dispatcher:
+        class: Symfony\Component\EventDispatcher\EventDispatcher
+
+    phatic.config:
+        class: MagdKudama\Phatic\AppConfigLoader
+        arguments: ["%phatic.app_config%"]
+
+    phatic.twig_loader:
+        class: Twig_Loader_Filesystem
+        calls:
+            - [addPath, ["@=service('phatic.config').getPostsPath()"]]
+            - [addPath, ["@=service('phatic.config').getPagesPath()"]]
+    phatic.twig:
+        class: Twig_Environment
+        arguments: ['@phatic.twig_loader']
+
+    phatic.commands:
+        class: MagdKudama\Phatic\Collection\CommandCollection
+    phatic.processors:
+        class: MagdKudama\Phatic\Collection\ProcessorCollection

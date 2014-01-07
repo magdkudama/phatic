@@ -1,0 +1,13 @@
+Phatic - Ultra Simple Static Page Generator version 1.0
+
+Usage:
+  [options] command [arguments]
+
+Options:
+  --version        -v Display this application version.
+  --config         -c Sets the application config file path.
+  --dir            -d Sets the application resultant directory.
+
+Available commands:
+  bootstrap-application   Bootstraps the generator application
+  list                    Lists commands

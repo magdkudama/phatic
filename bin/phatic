@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+use MagdKudama\Phatic\Console\Application;
+
+$paths = [__DIR__ . '/..', __DIR__ . '/../../../..'];
+
+$existsOne = false;
+foreach($paths as $path) {
+    $fileName = $path . '/vendor/autoload.php';
+    if(file_exists($fileName)) {
+        require_once $fileName;
+        $existsOne = true;
+        break;
+    }
+}
+
+if(!$existsOne) {
+    echo
+        'Please install dependencies using Composer . ' . PHP_EOL .
+        'Visit http://getcomposer.org/ and read about how to do it' . PHP_EOL;
+    exit;
+}
+
+$app = new Application();
+$app->run();
