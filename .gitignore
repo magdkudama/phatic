@@ -2,5 +2,4 @@
 .site/
 phatic.yml
 vendor
-composer.lock
 /site/
