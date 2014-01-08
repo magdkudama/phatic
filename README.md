@@ -19,6 +19,7 @@ Code quality
 ------------
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/fa832d76-a1ab-4879-a306-41e5926a78d3/mini.png)](https://insight.sensiolabs.com/projects/fa832d76-a1ab-4879-a306-41e5926a78d3)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/magdkudama/phatic/badges/quality-score.png?s=4f4563718877e82b521dfb9558cbd7a8013bc427)](https://scrutinizer-ci.com/g/magdkudama/phatic/)
+[![Code Coverage](https://scrutinizer-ci.com/g/magdkudama/phatic/badges/coverage.png?s=fe7970b3ecc1b7e8159efe9a6258332b9bb9ca5d)](https://scrutinizer-ci.com/g/magdkudama/phatic/)
 
 Running
 -------
