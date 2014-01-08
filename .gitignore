@@ -1,5 +1,5 @@
 .idea/
 .site/
-phatic.yml
+/phatic.yml
 vendor
 /site/
