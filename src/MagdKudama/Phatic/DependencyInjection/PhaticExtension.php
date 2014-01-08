@@ -79,20 +79,16 @@ class PhaticExtension
         $tree = $this->configuration->getConfigTree($this->extensions);
         $this->processor->process($tree, $configs);
 
-        /** @var Extension $extension */
-        foreach ($this->extensions as $extension) {
-            $tempContainer = new ContainerBuilder();
-            $tempContainer->addObjectResource($extension);
-
-            $extension->load($extensionsConfigs[get_class($extension)], $tempContainer);
-            $container->merge($tempContainer);
-        }
-
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Config')
         );
         $loader->load('services.yml');
+
+        /** @var Extension $extension */
+        foreach ($this->extensions as $extension) {
+            $extension->load($extensionsConfigs[get_class($extension)], $container);
+        }
 
         $this->addCompilerPasses($container);
     }
