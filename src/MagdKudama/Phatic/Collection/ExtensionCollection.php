@@ -37,6 +37,7 @@ class ExtensionCollection implements IteratorAggregate, Countable
 
     /**
      * @param string $name
+     * @return bool
      */
     public function findByName($name)
     {

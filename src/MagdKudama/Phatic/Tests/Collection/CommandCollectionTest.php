@@ -24,7 +24,7 @@ class CommandCollectionTest extends TestCase
 
     public function testAddingAnElementWorks()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\Console\\Command\\ContainerAwareCommand");
+        $mock = m::mock('MagdKudama\Phatic\Console\Command\ContainerAwareCommand');
         $this->collection->add($mock);
 
         $this->assertEquals(
@@ -44,7 +44,7 @@ class CommandCollectionTest extends TestCase
 
     public function testAddingElementChecksIfItsContained()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\Console\\Command\\ContainerAwareCommand");
+        $mock = m::mock('MagdKudama\Phatic\Console\Command\ContainerAwareCommand');
         $this->collection->add($mock);
         $this->collection->add($mock);
 

@@ -14,9 +14,9 @@
             <directory>src</directory>
             <exclude>
                 <directory>src/MagdKudama/Phatic/Tests</directory>
-                <directory>src/MagdKudama/Phatic/Config</directory>
                 <directory>src/MagdKudama/Phatic/bootstrap</directory>
                 <directory>src/MagdKudama/Phatic/Exception</directory>
+                <file>src/MagdKudama/Phatic/Config/services.yml</file>
             </exclude>
         </whitelist>
     </filter>

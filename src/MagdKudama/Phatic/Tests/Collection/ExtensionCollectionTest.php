@@ -24,7 +24,7 @@ class ExtensionCollectionTest extends TestCase
 
     public function testAddingAnElementWorks()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\Extension");
+        $mock = m::mock('MagdKudama\Phatic\Extension');
         $this->collection->add($mock);
 
         $this->assertEquals(
@@ -44,7 +44,7 @@ class ExtensionCollectionTest extends TestCase
 
     public function testAddingElementChecksIfItsContained()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\Extension");
+        $mock = m::mock('MagdKudama\Phatic\Extension');
         $this->collection->add($mock);
         $this->collection->add($mock);
 
@@ -57,7 +57,7 @@ class ExtensionCollectionTest extends TestCase
 
     public function testSearchingByNameReturnsFalseIfNotExists()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\Extension");
+        $mock = m::mock('MagdKudama\Phatic\Extension');
         $this->collection->add($mock);
 
         $this->assertFalse(
@@ -68,13 +68,13 @@ class ExtensionCollectionTest extends TestCase
 
     public function testSearchingByNameReturnsTheElement()
     {
-        $mock1 = m::mock("MagdKudama\\Phatic\\Extension");
+        $mock1 = m::mock('MagdKudama\Phatic\Extension');
         $this->collection->add($mock1);
 
-        $mock2 = m::mock("MagdKudama\\Phatic\\Extension");
+        $mock2 = m::mock('MagdKudama\Phatic\Extension');
         $this->collection->add($mock2);
 
-        $mock3 = m::mock("MagdKudama\\Phatic\\Extension");
+        $mock3 = m::mock('MagdKudama\Phatic\Extension');
         $this->collection->add($mock3);
 
         foreach ([$mock1, $mock2, $mock3] as $mock) {

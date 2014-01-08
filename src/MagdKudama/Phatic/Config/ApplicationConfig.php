@@ -1,8 +1,8 @@
 <?php
 
-namespace MagdKudama\Phatic;
+namespace MagdKudama\Phatic\Config;
 
-class AppConfigLoader
+class ApplicationConfig
 {
     protected $config;
 

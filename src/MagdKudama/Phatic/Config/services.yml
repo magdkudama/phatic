@@ -7,7 +7,7 @@ services:
         class: Symfony\Component\EventDispatcher\EventDispatcher
 
     phatic.config:
-        class: MagdKudama\Phatic\AppConfigLoader
+        class: MagdKudama\Phatic\Config\ApplicationConfig
         arguments: ["%phatic.app_config%"]
 
     phatic.twig_loader:

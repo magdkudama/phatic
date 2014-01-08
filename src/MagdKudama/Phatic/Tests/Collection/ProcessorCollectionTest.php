@@ -24,7 +24,7 @@ class ProcessorCollectionTest extends TestCase
 
     public function testAddingAnElementWorks()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\AbstractProcessor");
+        $mock = m::mock('MagdKudama\Phatic\AbstractProcessor');
         $this->collection->add($mock);
 
         $this->assertEquals(
@@ -44,7 +44,7 @@ class ProcessorCollectionTest extends TestCase
 
     public function testAddingElementChecksIfItsContained()
     {
-        $mock = m::mock("MagdKudama\\Phatic\\AbstractProcessor");
+        $mock = m::mock('MagdKudama\Phatic\AbstractProcessor');
         $this->collection->add($mock);
         $this->collection->add($mock);
 

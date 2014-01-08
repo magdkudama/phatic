@@ -1,11 +1,12 @@
 <?php
 
-namespace MagdKudama\Phatic\Tests;
+namespace MagdKudama\Phatic\Tests\Config;
 
-use MagdKudama\Phatic\AppConfigLoader;
+use MagdKudama\Phatic\Config\ApplicationConfig;
+use MagdKudama\Phatic\Tests\TestCase;
 use MagdKudama\Phatic\Utils;
 
-class AppConfigLoaderTest extends TestCase
+class ApplicationConfigTest extends TestCase
 {
     public function testGetterMethodsWork()
     {
@@ -22,7 +23,7 @@ class AppConfigLoaderTest extends TestCase
             'boot_directory' => Utils::getBootDirectory() . 'bootstrap/site/'
         ];
 
-        $configClass = new AppConfigLoader($arrayConfig);
+        $configClass = new ApplicationConfig($arrayConfig);
         $this->assertEquals(
             $arrayConfig['config_file'],
             $configClass->getConfigFile(),

@@ -8,6 +8,7 @@ use MagdKudama\Phatic\DependencyInjection\Compiler\EventSubscriberPass;
 use MagdKudama\Phatic\DependencyInjection\Compiler\ProcessorPass;
 use MagdKudama\Phatic\DependencyInjection\Compiler\ViewExtensionPass;
 use MagdKudama\Phatic\DependencyInjection\Configuration;
+use MagdKudama\Phatic\Exception\DependencyNotSatisfiedException;
 use MagdKudama\Phatic\Exception\UndefinedClassException;
 use MagdKudama\Phatic\Extension;
 use MagdKudama\Phatic\Utils;
@@ -87,6 +88,12 @@ class PhaticExtension
 
         /** @var Extension $extension */
         foreach ($this->extensions as $extension) {
+            if (null !== $extension->getExtensionDependency()) {
+                if (!$this->extensions->findByName($extension->getExtensionDependency())) {
+                    $message = sprintf("Extension %s requires extension %s", get_class($extension), $extension->getExtensionDependency());
+                    throw new DependencyNotSatisfiedException($message);
+                }
+            }
             $extension->load($extensionsConfigs[get_class($extension)], $container);
         }
 

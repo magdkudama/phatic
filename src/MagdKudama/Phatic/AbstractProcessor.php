@@ -2,6 +2,7 @@
 
 namespace MagdKudama\Phatic;
 
+use MagdKudama\Phatic\Config\ApplicationConfig;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -15,7 +16,7 @@ abstract class AbstractProcessor
     protected $dispatcher;
     protected $config;
 
-    public function __construct(Finder $finder, Filesystem $fileSystem, View $view, EventDispatcherInterface $dispatcher, AppConfigLoader $config)
+    public function __construct(Finder $finder, Filesystem $fileSystem, View $view, EventDispatcherInterface $dispatcher, ApplicationConfig $config)
     {
         $this->finder = $finder;
         $this->fileSystem = $fileSystem;
@@ -48,7 +49,7 @@ abstract class AbstractProcessor
         return $this->dispatcher;
     }
 
-    /** @return AppConfigLoader */
+    /** @return ApplicationConfig */
     public function getConfig()
     {
         return $this->config;

@@ -160,6 +160,44 @@ class PhaticExtensionTest extends TestCase
         );
     }
 
+    /**
+     * @expectedException MagdKudama\Phatic\Exception\DependencyNotSatisfiedException
+     */
+    public function testExtensionsWithNonSatisfiedDependenciesThrowException()
+    {
+        $config = [
+            'config' => [
+                'extensions' => [
+                    'MagdKudama\Phatic\Tests\DependencyInjection\Fixtures\MyDependantExtension' => []
+                ]
+            ]
+        ];
+
+        $this->extension->load($config, $this->container);
+    }
+
+    public function testExtensionsWithSatisfiedDependenciesWith()
+    {
+        $config = [
+            'config' => [
+                'extensions' => [
+                    'MagdKudama\Phatic\Tests\DependencyInjection\Fixtures\MyTestExtension' => [
+                        'param' => 'test'
+                    ],
+                    'MagdKudama\Phatic\Tests\DependencyInjection\Fixtures\MyDependantExtension' => []
+                ]
+            ]
+        ];
+
+        $this->extension->load($config, $this->container);
+
+        $this->assertEquals(
+            2,
+            count($this->extension->getExtensionCollection()),
+            'Check that extensions are loaded'
+        );
+    }
+
     public function badConfigProvider()
     {
         return [

@@ -2,7 +2,7 @@
 
 namespace MagdKudama\Phatic\Console\Command;
 
-use MagdKudama\Phatic\AppConfigLoader;
+use MagdKudama\Phatic\Config\ApplicationConfig;
 use MagdKudama\Phatic\Console\Command\CommandOutputHelper;
 use MagdKudama\Phatic\Console\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -27,7 +27,7 @@ class BootstrapCommand extends ContainerAwareCommand
         try {
             $filesystem = $this->getContainer()->get('phatic.filesystem');
 
-            /** @var AppConfigLoader $config */
+            /** @var ApplicationConfig $config */
             $config = $this->getContainer()->get('phatic.config');
             $bootstrapDirectory = $config->getBootDirectory();
             $resultDirectory = $config->getSiteDirectory();
