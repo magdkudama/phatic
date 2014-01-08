@@ -3,6 +3,7 @@
 namespace MagdKudama\Phatic\Console;
 
 use MagdKudama\Phatic\Console\Command\BootstrapCommand;
+use MagdKudama\Phatic\Console\Command\ContainerAwareCommand;
 use MagdKudama\Phatic\DependencyInjection\PhaticExtension;
 use MagdKudama\Phatic\Utils;
 use Symfony\Component\Console\Application as BaseApplication;
@@ -40,8 +41,11 @@ class Application extends BaseApplication
         $this->guessResultDirectory($input);
 
         $commands = $this->getContainer()->get('phatic.commands');
-        foreach ($commands as $command) {
-            $this->add($command);
+
+        if ($commands instanceof ContainerAwareCommand) {
+            foreach ($commands as $command) {
+                $this->add($command);
+            }
         }
 
         return parent::doRun($input, $output);
