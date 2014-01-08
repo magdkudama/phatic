@@ -8,6 +8,7 @@ class CommandOutputHelper
 {
     /**
      * @param string $tag
+     * @param string $message
      */
     public static function write(OutputInterface $output, $message, $tag)
     {
