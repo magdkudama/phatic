@@ -2,8 +2,8 @@
 
 namespace MagdKudama\Phatic\Console;
 
+use MagdKudama\Phatic\Collection\CommandCollection;
 use MagdKudama\Phatic\Console\Command\BootstrapCommand;
-use MagdKudama\Phatic\Console\Command\ContainerAwareCommand;
 use MagdKudama\Phatic\DependencyInjection\PhaticExtension;
 use MagdKudama\Phatic\Utils;
 use Symfony\Component\Console\Application as BaseApplication;
@@ -42,7 +42,7 @@ class Application extends BaseApplication
 
         $commands = $this->getContainer()->get('phatic.commands');
 
-        if ($commands instanceof ContainerAwareCommand) {
+        if ($commands instanceof CommandCollection) {
             foreach ($commands as $command) {
                 $this->add($command);
             }
