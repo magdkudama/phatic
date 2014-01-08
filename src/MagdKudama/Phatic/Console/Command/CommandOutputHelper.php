@@ -6,6 +6,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CommandOutputHelper
 {
+    /**
+     * @param string $tag
+     */
     public static function write(OutputInterface $output, $message, $tag)
     {
         $startTag = sprintf("<%s>", $tag);
@@ -13,16 +16,25 @@ class CommandOutputHelper
         $output->writeln($startTag . $message . $endTag);
     }
 
+    /**
+     * @param string $message
+     */
     public static function writeInfo(OutputInterface $output, $message)
     {
         self::write($output, $message, "info");
     }
 
+    /**
+     * @param string $message
+     */
     public static function writeError(OutputInterface $output, $message)
     {
         self::write($output, $message, "error");
     }
 
+    /**
+     * @param string $message
+     */
     public static function writeComment(OutputInterface $output, $message)
     {
         self::write($output, $message, "comment");

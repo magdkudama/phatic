@@ -4,14 +4,8 @@ namespace MagdKudama\Phatic\Tests\Console\Command;
 
 use MagdKudama\Phatic\Console\Application;
 use MagdKudama\Phatic\Console\Command\BootstrapCommand;
-use MagdKudama\Phatic\Console\Command\CommandOutputHelper;
 use MagdKudama\Phatic\Tests\TestCase;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Formatter\OutputFormatter;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Output\StreamOutput;
-use Symfony\Component\Console\Output\Output;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -129,6 +123,9 @@ class BootstrapCommandTest extends TestCase
         );
     }
 
+    /**
+     * @param string $input
+     */
     protected function getInputStream($input)
     {
         $stream = fopen('php://memory', 'r+', false);

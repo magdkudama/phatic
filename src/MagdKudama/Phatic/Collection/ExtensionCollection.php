@@ -35,6 +35,9 @@ class ExtensionCollection implements IteratorAggregate, Countable
         return false;
     }
 
+    /**
+     * @param string $name
+     */
     public function findByName($name)
     {
         foreach ($this->extensions as $extension) {
