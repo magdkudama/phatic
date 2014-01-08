@@ -18,6 +18,7 @@ $> php composer.phar install
 Code quality
 ------------
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/fa832d76-a1ab-4879-a306-41e5926a78d3/mini.png)](https://insight.sensiolabs.com/projects/fa832d76-a1ab-4879-a306-41e5926a78d3)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/magdkudama/phatic/badges/quality-score.png?s=4f4563718877e82b521dfb9558cbd7a8013bc427)](https://scrutinizer-ci.com/g/magdkudama/phatic/)
 
 Running
 -------
