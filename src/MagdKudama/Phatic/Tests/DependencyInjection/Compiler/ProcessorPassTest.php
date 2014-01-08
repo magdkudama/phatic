@@ -2,7 +2,6 @@
 
 namespace MagdKudama\Phatic\Tests\DependencyInjection\Compiler;
 
-use MagdKudama\Phatic\DependencyInjection\Compiler\EventSubscriberPass;
 use MagdKudama\Phatic\DependencyInjection\Compiler\ProcessorPass;
 use MagdKudama\Phatic\Tests\TestCase;
 use Mockery as m;

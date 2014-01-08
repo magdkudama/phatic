@@ -4,11 +4,7 @@ namespace MagdKudama\Phatic\Tests\Console\Command;
 
 use MagdKudama\Phatic\Console\Command\CommandOutputHelper;
 use MagdKudama\Phatic\Tests\TestCase;
-use Symfony\Component\Console\Formatter\OutputFormatter;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Output\StreamOutput;
-use Symfony\Component\Console\Output\Output;
 
 class CommandOutputHelperTest extends TestCase
 {
