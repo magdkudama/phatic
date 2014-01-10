@@ -22,8 +22,6 @@ class BootstrapCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        parent::execute($input, $output);
-
         try {
             $filesystem = $this->getContainer()->get('phatic.filesystem');
 

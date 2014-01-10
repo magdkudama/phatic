@@ -68,7 +68,7 @@ class Application extends BaseApplication
     {
         $systemConfig = $input->getParameterOption(['--config', '-c']);
         if (false !== $systemConfig) {
-            if (!is_file($systemConfig)) {
+            if (!file_exists($systemConfig) || !is_file($systemConfig)) {
                 throw new FileNotFoundException("Config file {$systemConfig} does not exist!");
             }
             $this->systemConfig = $systemConfig;
