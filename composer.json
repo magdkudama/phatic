@@ -33,6 +33,10 @@
         "mockery/mockery": "0.8.0"
     },
 
+    "suggest": {
+        "magd-kudama/phatic-blog-extension": "Create a blog using Phatic"
+    },
+
     "autoload": {
         "psr-0": {
             "MagdKudama\\Phatic": "src/"
