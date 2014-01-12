@@ -18,7 +18,7 @@ class PhaticExtensionTest extends TestCase
     public function setUp()
     {
         $this->container = new ContainerBuilder();
-        $this->extension = new PhaticExtension(__DIR__, __DIR__);
+        $this->extension = new PhaticExtension(__DIR__, __DIR__ . '/');
     }
 
     /**
@@ -51,7 +51,7 @@ class PhaticExtensionTest extends TestCase
             ],
             'app_directory' => [
                 'name' => 'application directory',
-                'value' => __DIR__
+                'value' => __DIR__ . '/'
             ],
             'site_directory' => [
                 'name' => 'site directory',

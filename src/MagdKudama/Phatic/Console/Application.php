@@ -94,7 +94,7 @@ class Application extends BaseApplication
                 throw new IOException("Directory {$resultantDirectory} is not writable!");
             }
 
-            $this->resultDirectory = (substr($resultantDirectory, 0, -1) == '/') ? $resultantDirectory : $resultantDirectory . '/';
+            $this->resultDirectory = (substr($resultantDirectory, -1) == '/') ? $resultantDirectory : $resultantDirectory . '/';
             return;
         }
 

@@ -49,12 +49,12 @@ class PhaticExtension
         $arrayConfig = [
             'config_file' => $this->systemConfig,
             'app_directory' => $this->resultsDirectory,
-            'site_directory' => $this->resultsDirectory . '/site/',
-            'assets_path' => $this->resultsDirectory . '/site/_assets/',
-            'layouts_path' => $this->resultsDirectory . '/site/_pages/_layouts/',
-            'posts_path' => $this->resultsDirectory . '/site/_posts/',
-            'results_path' => $this->resultsDirectory . '/site/result/',
-            'pages_path' => $this->resultsDirectory . '/site/_pages/',
+            'site_directory' => $this->resultsDirectory . 'site/',
+            'assets_path' => $this->resultsDirectory . 'site/_assets/',
+            'layouts_path' => $this->resultsDirectory . 'site/_pages/_layouts/',
+            'posts_path' => $this->resultsDirectory . 'site/_posts/',
+            'results_path' => $this->resultsDirectory . 'site/result/',
+            'pages_path' => $this->resultsDirectory . 'site/_pages/',
             'system_directory' => Utils::getSystemDirectory(),
             'boot_directory' => Utils::getBootDirectory() . 'bootstrap/site/'
         ];
