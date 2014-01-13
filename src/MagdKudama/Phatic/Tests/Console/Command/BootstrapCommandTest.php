@@ -124,7 +124,7 @@ class BootstrapCommandTest extends TestCase
     }
 
     /**
-     * @param $input
+     * @param string $input
      * @return resource
      */
     protected function getInputStream($input)
