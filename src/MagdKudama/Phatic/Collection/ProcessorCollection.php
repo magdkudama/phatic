@@ -5,7 +5,6 @@ namespace MagdKudama\Phatic\Collection;
 use IteratorAggregate;
 use Countable;
 use Doctrine\Common\Collections\ArrayCollection;
-use MagdKudama\Phatic\AbstractProcessor;
 use MagdKudama\Phatic\Processor;
 
 class ProcessorCollection implements IteratorAggregate, Countable
