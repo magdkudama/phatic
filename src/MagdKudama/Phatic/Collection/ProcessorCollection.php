@@ -6,6 +6,7 @@ use IteratorAggregate;
 use Countable;
 use Doctrine\Common\Collections\ArrayCollection;
 use MagdKudama\Phatic\AbstractProcessor;
+use MagdKudama\Phatic\Processor;
 
 class ProcessorCollection implements IteratorAggregate, Countable
 {
@@ -17,7 +18,7 @@ class ProcessorCollection implements IteratorAggregate, Countable
         $this->processors = new ArrayCollection();
     }
 
-    public function add(AbstractProcessor $processor)
+    public function add(Processor $processor)
     {
         if (!$this->processors->contains($processor)) {
             $this->processors->add($processor);
