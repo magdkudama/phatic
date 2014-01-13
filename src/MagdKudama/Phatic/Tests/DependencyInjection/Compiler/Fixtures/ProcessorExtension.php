@@ -2,9 +2,9 @@
 
 namespace MagdKudama\Phatic\Tests\DependencyInjection\Compiler\Fixtures;
 
-use MagdKudama\Phatic\AbstractProcessor;
+use MagdKudama\Phatic\Processor;
 
-class ProcessorExtension extends AbstractProcessor
+class ProcessorExtension implements Processor
 {
     public function getCollection()
     {

@@ -27,36 +27,6 @@ class ProcessorPassTest extends TestCase
             ->with('phatic.processors')
             ->andReturn(new Definition())
             ->once();
-
-        $this->builder
-            ->shouldReceive('getDefinition')
-            ->with('phatic.finder')
-            ->andReturn(new Definition())
-            ->once();
-
-        $this->builder
-            ->shouldReceive('getDefinition')
-            ->with('phatic.twig')
-            ->andReturn(new Definition())
-            ->once();
-
-        $this->builder
-            ->shouldReceive('getDefinition')
-            ->with('phatic.filesystem')
-            ->andReturn(new Definition())
-            ->once();
-
-        $this->builder
-            ->shouldReceive('getDefinition')
-            ->with('phatic.dispatcher')
-            ->andReturn(new Definition())
-            ->once();
-
-        $this->builder
-            ->shouldReceive('getDefinition')
-            ->with('phatic.config')
-            ->andReturn(new Definition())
-            ->once();
     }
 
     public function tearDown()
@@ -78,7 +48,7 @@ class ProcessorPassTest extends TestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testNotExtendingClassThrowsException()
+    public function testNotImplementingClassThrowsException()
     {
         $this->builder
             ->shouldReceive('findTaggedServiceIds')
@@ -98,7 +68,7 @@ class ProcessorPassTest extends TestCase
         $this->pass->process($this->builder);
     }
 
-    public function testExtendingClassWorks()
+    public function testImplementingClassWorks()
     {
         $this->builder
             ->shouldReceive('findTaggedServiceIds')
