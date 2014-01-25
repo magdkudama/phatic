@@ -94,7 +94,9 @@ class PhaticExtension
                     throw new DependencyNotSatisfiedException($message);
                 }
             }
-            $extension->load($extensionsConfigs[get_class($extension)], $container);
+
+            $config = ($extensionsConfigs[get_class($extension)]) ? $extensionsConfigs[get_class($extension)] : [];
+            $extension->load($config, $container);
         }
 
         $this->addCompilerPasses($container);
